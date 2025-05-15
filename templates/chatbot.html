@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow p-4">
+  <h3>Legal Chatbot</h3>
+  <form method="POST">
+    <input name="question" class="form-control mb-3" placeholder="Ask your legal question..." value="{{ request.form.question or '' }}">
+    <button class="btn btn-success">Ask</button>
+  </form>
+  {% if response %}
+  <hr>
+  <h5>AI Response:</h5>
+  <p>{{ response }}</p>
+  {% endif %}
+</div>
+{% endblock %}

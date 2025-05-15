@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow p-4">
+  <h3>Consultation Cost Estimator</h3>
+  <form method="POST">
+    <div class="row mb-3">
+      <div class="col">
+        <input name="case_type" class="form-control" placeholder="Case Type (e.g. Civil, Land Dispute)">
+      </div>
+      <div class="col">
+        <input name="court_level" class="form-control" placeholder="Court Level (District Court, High Court)">
+      </div>
+    </div>
+    <button class="btn btn-warning">Estimate Cost</button>
+  </form>
+  {% if result %}
+  <hr>
+  <h5>Estimated Cost:</h5>
+  <p>₹ {{ result }}</p>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow p-4">
+  <h3>Document Summarizer</h3>
+  <form action="/summarizer" method="POST" enctype="multipart/form-data">
+    <label for="document">Upload a legal document (PDF or DOCX):</label><br><br>
+    <input type="file" name="document" accept=".pdf,.doc,.docx" required><br><br>
+    <input type="submit" value="Summarize">
+  </form>
+
+  {% if summary %}
+  <hr>
+  <h5>Summary with Legal Context:</h5>
+  <pre>{{ summary }}</pre>
+  {% endif %}
+</div>
+{% endblock %}
